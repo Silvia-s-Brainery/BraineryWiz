@@ -168,7 +168,7 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 	
 	#Final Message if file has been created and warning if file has not been created
 	if {$fexist==1} {
-		puts "Data file has been created in below address: \n \n $FileName \n"
+		#puts "Data file has been created in below address: \n \n $FileName \n"
 	} else {
 		puts "Data file has not been created for some unknown reasons!!!"
 	}	
