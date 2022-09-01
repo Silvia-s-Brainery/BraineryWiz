@@ -11,8 +11,8 @@ BraineryWiz_version = (
 
 assert "." in BraineryWiz_version
 
-assert os.path.isfile("brainerywiz/version.py")
-with open("brainerywiz/VERSION", "w", encoding="utf-8") as fh:
+assert os.path.isfile("BraineryWiz/version.py")
+with open("BraineryWiz/VERSION", "w", encoding="utf-8") as fh:
     fh.write(f"{BraineryWiz_version}\n")
 
 
