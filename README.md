@@ -5,9 +5,16 @@
 [![Downloads](https://pepy.tech/badge/BraineryWiz/month)](https://pepy.tech/project/BraineryWiz)
 [![Downloads](https://pepy.tech/badge/BraineryWiz/week)](https://pepy.tech/project/BraineryWiz)
 
+**Main WebPage**: https://www.silviasbrainery.com/brainerywiz
+
+**BraineyWiz Email Address:** <BraineryWiz@Gmail.com>
 
 
-**By: [Bijan Sayyafzadeh](b.sayyaf@yahoo.com) and Proudly 
-      [Silvia Mazzoni](SilviaMazzoni@yahoo.com)**
 
-Main WebPage: https://www.silviasbrainery.com/brainerywiz
+## By: 
+
+- **Bijan Sayyafzadeh**: [Github](https://github.com/BijanSeif), Email: <B.Sayyaf@yahoo.com>
+- **Silvia Mazzoni**: [Github](https://github.com/silviamazzoni), Email: <SilviaMazzoni@yahoo.com>
+
+
+
