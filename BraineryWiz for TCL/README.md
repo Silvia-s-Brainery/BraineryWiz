@@ -17,4 +17,25 @@
 - **Silvia Mazzoni**: [Github](https://github.com/silviamazzoni), Email: <SilviaMazzoni@yahoo.com>
 
 
+## TCL Instalation Stpes:
+- Download **BraineryWiz.exe from** [here](https://www.silviasbrainery.com/brainerywiz).
+- Copy Downloaded **BraineryWiz.exe** beside **OpenSees.exe** file on your pc.
+- Download BraineryWiz.tcl from this page and copy it in the folder that tcl model is located.
 
+## How to use:
+- First user should source the downloaded file: 
+
+```
+source BraineryWiz.tcl
+```
+
+- Use BraineryWiz commands in tcl code with various options that explained in next part. Sample:
+
+```
+PlotModel 
+```
+
+## BraineryWiz TCL commands and options:
+
+**PlotModel** command options:
+- onhover:
