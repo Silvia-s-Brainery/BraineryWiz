@@ -1,10 +1,5 @@
 # [BraineryWiz](https://www.silviasbrainery.com/brainerywiz)
 
-[![PyPI version fury.io](https://badge.fury.io/py/BraineryWiz.svg)](https://pypi.python.org/pypi/BraineryWiz/)
-[![Downloads](https://pepy.tech/badge/BraineryWiz)](https://pepy.tech/project/BraineryWiz)
-[![Downloads](https://pepy.tech/badge/BraineryWiz/month)](https://pepy.tech/project/BraineryWiz)
-[![Downloads](https://pepy.tech/badge/BraineryWiz/week)](https://pepy.tech/project/BraineryWiz)
-
 **Main WebPage**: https://www.silviasbrainery.com/brainerywiz
 
 **BraineyWiz Email Address:** <BraineryWiz@Gmail.com>
@@ -20,7 +15,7 @@
 ## TCL Instalation Stpes:
 - Download **BraineryWiz.exe from** [here](https://www.silviasbrainery.com/brainerywiz).
 - Copy Downloaded **BraineryWiz.exe** beside **OpenSees.exe** file on your pc.
-- Download BraineryWiz.tcl from this page and copy it in the folder that tcl model is located.
+- Download BraineryWiz.tcl from this page and copy it in the folder that tcl model is located to source it.
 
 ## How to use:
 - First user should source the downloaded file: 
