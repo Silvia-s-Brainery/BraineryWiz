@@ -10,6 +10,9 @@
 **BraineyWiz Email Address:** <BraineryWiz@Gmail.com>
 
 
+**Description:**
+
+***An Element Independent Package for plotting FEM models***
 
 ## By: 
 
