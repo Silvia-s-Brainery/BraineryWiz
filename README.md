@@ -52,7 +52,7 @@ import BraineryWiz.Jupyter as bz
         Boolean that determines does nodes be drawn or not
         
 - show_nodes_tag=False
-- 
+
         Boolean that determines does the nodes tag be shown or not
         
 - show_elemens_tag=False
