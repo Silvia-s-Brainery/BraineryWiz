@@ -48,46 +48,61 @@ import BraineryWiz.Jupyter as bz
 
 **bz.PlotModel** command options:
 - draw_nodes=True
+
         Boolean that determines does nodes be drawn or not
         
 - show_nodes_tag=False
+- 
         Boolean that determines does the nodes tag be shown or not
         
 - show_elemens_tag=False
+
         Boolean that determines does the elements tag be shown or not
         
 - onhover_message=False
+
     	Boolean that says Do the hovers data be shown or not    
         
 -  title='BraineryWiz'
+
         Title of the figure
     
 - fig_width=1000
+
         determines the width of the Figure
         
 - fig_height=800
+
         determines the height od the figure
         
 - elements_data_tag=[]
+
         List of the elements tag that you want to add some data to be shown on them
     
 - elements_data=[]
+
         List of the data corresponding to the elements that you want to be shown on each element
         
 - nodes_data_tag=[]
+
         List of the nodes tag that you want to add some data to be shown on them
         
 - nodes_data=[]
+
         List of the data corresponding to the nodes that you want to be shown on each element
         
 - image_type=None
+
         (Types: 'png' |'jpeg' |'svg' |'webp') This parameter sets the format of the image to be downloaded, if we choose to download an image.
     
 - image_filename='BraneryWz'
+
         Filename of the download image
         
 - quivers_size=None
+
         If None means do not plot quivers else plot quivers with entered size by the user
         
 - plot_fibers=False
+
         Boolean that shows plot Fiber points or not
