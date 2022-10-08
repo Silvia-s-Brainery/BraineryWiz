@@ -4,7 +4,8 @@
 # **              by Bijan Sayyafzadeh & Silvia Mazzoni                 **
 # **                                                                    **
 # **                                                                    **
-# ** (C) Copyright 2022, The Regents of the SilviaBrainery.com          **
+# ** (C) Copyright 2022, Bijan Sayyafzadeh & Silvia Mazzoni             **
+# **       SilviaBrainery.com                                           **
 # ** All Rights Reserved.                                               **
 # **                                                                    **
 # ** Commercial use of this program without express permission of the   **
@@ -14,8 +15,8 @@
 # ** DISCLAIMER OF ALL WARRANTIES.                                      **
 # **                                                                    **
 # ** Developed by:                                                      **
-# **   SilviaMazzoni     (SilviaMazzoni@Yahoo.com)                      **
 # **   Bijan SayyafZadeh (B.Sayyaf@yahoo.com)                           **
+# **   SilviaMazzoni     (SilviaMazzoni@Yahoo.com)                      **
 # **                                                                    **
 # ** ****************************************************************** */
 
