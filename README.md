@@ -20,7 +20,7 @@
 - **Silvia Mazzoni**: [Github](https://github.com/silviamazzoni), Email: <SilviaMazzoni@yahoo.com>
 
 
-## Instalation Stpes:
+## Instalation Steps:
 - Using command prompt using the following command:
 
 ```
