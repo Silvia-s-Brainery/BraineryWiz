@@ -20,7 +20,7 @@
 - **Silvia Mazzoni**: [Github](https://github.com/silviamazzoni), Email: <SilviaMazzoni@yahoo.com>
 
 
-## Instalation Stpes:
+## Instalation Steps:
 - Using command prompt using the following command:
 
 ```
@@ -38,15 +38,14 @@ conda ...
 ```
 import BraineryWiz as bz
 ```
-- for Jupyter users:
-
-```
-import BraineryWiz.Jupyter as bz
-```
 
 ## BraineryWiz commands and options:
 
 **bz.PlotModel** command options:
+- plotmode=1
+
+        An option that varies between 1 to 6 and user according the his/her Python Editor should change to find the value that cause plotting. (3 usually works for VSCode and Spyder and 1 or 2 is proper for JupyterNotebook)
+        
 - draw_nodes=True
 
         Boolean that determines does nodes be drawn or not
