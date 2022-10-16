@@ -1,7 +1,7 @@
 #
 from .PlotModel import PlotModel
-# from .PlotAnimation import *
-# from .PlotDefo import *
-# from .PlotModeShape import *
-# from .RealTime import *
+from .PlotAnimation import RecorderReset, Record, PlotAnime, PlotAnimeGif
+from .PlotDefo import PlotDefo
+from .PlotModeShape import PlotModeShape
+from .RealTime import RealTimeObj, ReatTimeUpdate
 
