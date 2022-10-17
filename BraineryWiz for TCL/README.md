@@ -24,13 +24,4 @@
 source BraineryWiz.tcl
 ```
 
-- Use BraineryWiz commands in tcl code with various options that explained in next part. Sample:
-
-```
-PlotModel 
-```
-
-## BraineryWiz TCL commands and options:
-
-**PlotModel** command options:
-- onhover:
+- Use BraineryWiz commands in tcl code with various options that are explained in documents.
