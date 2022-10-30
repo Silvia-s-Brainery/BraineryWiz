@@ -30,7 +30,7 @@ proc PlotModel {args} {
 	#OnHover: To show Data in Hover Format
 	#Sample : PlotModel DrawNodesOff ShowEleTag OnHover
 
-	set command "BraineryWiz.exe"
+	set command "BraineryWiz.exe PlotModel"
 	
 	
 	# Set the file name
