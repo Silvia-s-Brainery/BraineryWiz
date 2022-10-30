@@ -45,7 +45,7 @@ proc PlotModel {args} {
 	if {[lsearch $args Title]!=-1} {
 	
 		set a [lsearch $args Title]
-		set Title [lindex $args [$a+1]]
+		set Title [lindex $args [expr $a+1]]
 		set command "$command Title $Title"
 		
 	} 
