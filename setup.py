@@ -59,7 +59,7 @@ setup(
     },
     packages=find_packages(),
     install_requires=['openseespy', 'eseesminipy','numpy','plotly','scipy','pillow','kaleido','tqdm'],
-    url="https://github.com/BijanSeif - https://github.com/silviamazzoni",
+    url="https://github.com/Silvia-s-Brainery/BraineryWiz",
     keywords=['python', 'opensees', 'Modeling', 'Dynamic'],
     classifiers=[
         'Programming Language :: Python :: 3.9',
