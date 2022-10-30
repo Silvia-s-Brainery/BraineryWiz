@@ -15,7 +15,7 @@
 ## TCL Instalation Stpes:
 - Download **BraineryWiz.exe from** [here](http://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/BraineryWiz.exe).
 - Copy Downloaded **BraineryWiz.exe** beside **OpenSees.exe** file on your pc.
-- Download BraineryWiz.tcl from this page and copy it in the folder that tcl model is located to source it.
+- Download BraineryWiz.tcl from top of this page or from [here](http://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/BraineryWiz.tcl) and copy it in the folder that tcl model is located to source it.
 
 ## How to use:
 - First user should source the downloaded file: 
