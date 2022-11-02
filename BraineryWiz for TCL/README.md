@@ -24,4 +24,4 @@
 source BraineryWiz.tcl
 ```
 
-- Use BraineryWiz commands in tcl code with various options that are explained in documents.
+- Use BraineryWiz commands in tcl code with various options that are explained in documentations.
