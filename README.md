@@ -20,4 +20,4 @@
 - **Silvia Mazzoni**: [Github](https://github.com/silviamazzoni), Email: <SilviaMazzoni@yahoo.com>
 
 ## Prgramming Ethics : (Responsibility about Users Privacy)
-This is Bijan Sayyafzadeh, Because this package is not an opensource code, by this text I state that I'm the main developer and responsible of all code lines of this package and it is stated that the program has been written by completely respect to the users privacy and their data and their privacy and there is no collection, monitoring, and exchange of users personal information and data in this package and I am the main responsible of this ethical statement.  
+This is **Bijan Sayyafzadeh**, Because this package is not an opensource code, by this text I state that **I'm the main developer and responsible of all code lines of this package** and it is stated by me that the program has been written by completely respect to the users privacy and their data and their privacy and there is no collection, monitoring, and exchange of users personal information and data in this package and I am the main responsible of this ethical statement.  
