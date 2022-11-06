@@ -79,6 +79,13 @@ proc PlotModel {args} {
 		
 	}	
 	
+	#To plot Legends on the plot
+	if {[lsearch $args PlotLegend]!=-1} {
+
+		set command "$command PlotLegend"
+		
+	}	
+	
 
 	
 	ExportModel $FileName
