@@ -84,9 +84,20 @@ proc PlotModel {args} {
 
 		set command "$command PlotLegend"
 		
-	}	
-	
+	}
 
+	
+	#To set Vertical Axis on the plot
+	if {[lsearch $args VerticalAxis_2]!=-1} {
+
+		set command "$command VerticalAxis_2"
+		
+	}
+	if {[lsearch $args VerticalAxis_1]!=-1} {
+
+		set command "$command VerticalAxis_1"
+		
+	}
 	
 	ExportModel $FileName
 	exec cmd.exe /c $command &
