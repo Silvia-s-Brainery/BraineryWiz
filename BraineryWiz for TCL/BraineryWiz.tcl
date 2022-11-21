@@ -193,3 +193,31 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 	}	
 	
 }
+
+proc Record {{FileName "BrainRecorder.txt"}} {
+	#Function that records model displacement
+	
+	# First Open The File ---------------------------------------------------
+	set outfile1 [open $FileName a]
+
+    # get Nodes tag and corresponding nodes Displacement----------------------
+	set nodes [getNodeTags]
+	set data ""
+	puts "****** START ******"
+	foreach nd $nodes {
+			set disp [nodeDisp $nd]
+			
+			set d ""
+			foreach dis $disp {
+				set d "${d}$dis,"
+			}
+			set d [string trim $d ,];  #To remove last comma
+			
+			#Write into the format
+			set data "${data}\"$nd\":\[$d\]"
+			
+			
+	}	
+	puts "{${data}}%%"
+
+}
