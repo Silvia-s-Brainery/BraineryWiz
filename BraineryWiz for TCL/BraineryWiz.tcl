@@ -126,19 +126,15 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 
 	foreach nd $nodes {
 			set a [nodeCoord $nd]
-			set NodesTag "${NodesTag}$nd,"
-			
+			set NodesTag "${NodesTag},$nd"
 			puts $outfile1 "%NodeCoord% $nd: $a"
 			
 			set ea "";#To remove spaces
 			foreach m $a {
 				set ea "${ea}${m},"
-				}
-			set ea [string trim $ea ","];  #To remove last comma
-			set NodesCoord "${NodesCoord}\[${ea}\],"
+			}
+			set NodesCoord "${NodesCoord},\[${ea}\]"
 		}
-	set NodesTag [string trim $NodesTag ","];  #To remove last comma
-	set NodesCoord [string trim $NodesCoord ","];  #To remove last comma
 		
 	# get Element tags and corresponding element nodes----------------------
 	set elements [getEleTags]
@@ -146,20 +142,17 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 	foreach ele $elements {
 	
 		set a [eleNodes $ele]
-		set ElesTag "${ElesTag}$ele,"
+		set ElesTag "${ElesTag},$ele"
 					
 		puts $outfile1 "%EleNode% $ele: $a"
 		
 		set ea ""; #To remove spaces
 		foreach m $a {
 			set ea "${ea}${m},"
-			}
-		set ea [string trim $ea ","];  #To remove last comma
-		set ElesNodes "${ElesNodes}\[${ea}\],"
+		}
+		set ElesNodes "${ElesNodes},\[${ea}\]"
 		}	
-	set ElesTag [string trim $ElesTag ","];  #To remove last comma
-	set ElesNodes [string trim $ElesNodes ","];  #To remove last comma
-	
+		
 	# get element type------------------------------------------------------
 	# foreach ele $elements {
 
@@ -221,7 +214,7 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 	} else {
 		puts "Data file has not been created for some unknown reasons!!!"
 	}
-	set results "NodesTag $NodesTag NodesCoord $NodesCoord ElesTag $ElesTag ElesNodes $ElesNodes"
+	set results "$NodesTag $NodesCoord $ElesTag $ElesNodes"
 	return $results
 	
 }
