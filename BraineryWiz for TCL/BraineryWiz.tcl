@@ -30,20 +30,15 @@ proc PlotModel {args} {
 	#OnHover: To show Data in Hover Format
 	#Sample : PlotModel DrawNodesOff ShowEleTag OnHover
 
+	set command "BraineryWiz.exe PlotModel"
+	
+	
 	# Set the file name
 	set FileName [info script]
 	# set FileName [file tail $pathdir]
 	set length [string length $FileName]
 	set FileName [string range $FileName 0 [expr $length-5]]
 	set FileName "$FileName.wiz"
-	
-	# Export Data 
-	set command "BraineryWiz.exe"  
-	set a [ExportModel $FileName]
-	set command "$command $a"
-	set command "$command PlotModel"
-	
-
 	set command "$command FileName {$FileName}"
 	
 	#set the Title
@@ -104,7 +99,7 @@ proc PlotModel {args} {
 		
 	}
 	
-	
+	ExportModel $FileName
 	exec cmd.exe /c $command &
 	# exec cmd.exe /c "BraineryWiz.exe FileName $FileName" &
 }
@@ -113,10 +108,6 @@ proc PlotModel {args} {
 proc ExportModel {{FileName "Brainery.Wiz"}} {
 	
 	# Function that Export Model Data
-	set NodesTag ""
-	set NodesCoord ""
-	set ElesTag ""
-	set ElesNodes ""
 	
 	# First Open The File ---------------------------------------------------
 	set outfile1 [open $FileName w]
@@ -126,31 +117,17 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 
 	foreach nd $nodes {
 			set a [nodeCoord $nd]
-			set NodesTag "${NodesTag},$nd"
 			puts $outfile1 "%NodeCoord% $nd: $a"
-			
-			set ea "";#To remove spaces
-			foreach m $a {
-				set ea "${ea}${m},"
-			}
-			set NodesCoord "${NodesCoord},\[${ea}\]"
 		}
 		
 	# get Element tags and corresponding element nodes----------------------
 	set elements [getEleTags]
 	
 	foreach ele $elements {
-	
+
 		set a [eleNodes $ele]
-		set ElesTag "${ElesTag},$ele"
-					
 		puts $outfile1 "%EleNode% $ele: $a"
 		
-		set ea ""; #To remove spaces
-		foreach m $a {
-			set ea "${ea}${m},"
-		}
-		set ElesNodes "${ElesNodes},\[${ea}\]"
 		}	
 		
 	# get element type------------------------------------------------------
@@ -213,9 +190,7 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 		#puts "Data file has been created in below address: \n \n $FileName \n"
 	} else {
 		puts "Data file has not been created for some unknown reasons!!!"
-	}
-	set results "$NodesTag $NodesCoord $ElesTag $ElesNodes"
-	return $results
+	}	
 	
 }
 
