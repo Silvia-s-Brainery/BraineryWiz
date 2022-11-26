@@ -18,7 +18,7 @@
 - Download BraineryWiz.tcl from top of this page or from [here](http://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/BraineryWiz.tcl) and copy it in the folder that tcl model is located to source it. (Right Click on the link and click "Save Link As" to save it on your system)
 
 
-- Both **BraineryWiz.exe and BraineryWiz.tcl** also can be downloaded from [here](http://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/BraineryWiz.zip) as a zip file.
+- Both **BraineryWiz.exe and BraineryWiz.tcl** also can be downloaded from [here](http://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/BraineryWiz.zip) as a zip file. (Right Click on the link and click "Save Link As" to save it on your system)
 
 
 ## How to use:
