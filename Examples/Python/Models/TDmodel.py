@@ -7,7 +7,6 @@
 ## Updated - 09/10/2020
 ##################################################################
 
-import opsvis as opsplt
 import openseespy.opensees as ops
 import numpy as np
 import topspy.dynamic as bjd
@@ -111,24 +110,13 @@ for j in range(1, numFloor + 1):
 			nodeTag1 += 1
 		nodeTag1 += 1
 
-# calculate eigenvalues & print results
-# numEigen = 7
-# eigenValues = ops.eigen(numEigen)
-# PI = 2 * asin(1.0)
+        
+for r in [186, 192, 198, 204, 210, 181, 187, 193, 199, 205, 182, 183, 184, 185, 206, 207, 208, 209]:
+    ops.equalDOF(196,r,1,2)
+    
+for r in [156,162,168,174,151,157,163,169,175,176,177,178,179,180,152,153,154,155]:
+    ops.equalDOF(165,r,1,2)
 
-###################################
-#### Display the active model with node tags only
-# opsplt.plot_model("nodes")
-
-####  Display specific mode shape with scale factor of 300 using the active model
-# opsplt.plot_modeshape(5, 300)
-
-###################################
-# To save the analysis output for deformed shape, use createODB command before running the analysis
-# The following command saves the model data, and output for gravity analysis and the first 3 modes 
-# in a folder "3DFrame_ODB"
-
-# opsplt.createODB("3DFrame", "Gravity", Nmodes=3)
 
 # Define Static Analysis
 # create SOE
@@ -148,19 +136,6 @@ ops.reactions()
 
 
 print(ops.nodeReaction(6))
-
-# IMPORTANT: Make sure to issue a wipe() command to close all the recorders. Not issuing a wipe() command
-# ... can cause errors in the plot_deformedshape() command.
-
-
-
-####################################
-### Now plot mode shape 2 with scale factor of 300 and the deformed shape using the recorded output data
-
-# opsplt.plot_modeshape(2, 300, Model="3DFrame")
-
-# opsplt.plot_defo()
-
 
 
 G = 3860
