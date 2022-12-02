@@ -64,6 +64,22 @@ proc PlotModel {args} {
 		set command "$command ShowNodeTag"
 		
 	}
+
+	#Set Show Constrained
+	if {[lsearch $args ShowConstrained]!=-1} {
+
+		set command "$command ShowConstrained"
+		
+	}
+	
+	#Set ConstrainedSize
+	if {[lsearch $args ConstrainedSize]!=-1} {
+
+		set a [lsearch $args ConstrainedSize]
+		set SIZE [lindex $args [expr $a+1]]
+		set command "$command ConstrainedSize $SIZE"
+		
+	}	
 	
 	#Set to Show Elements Tag
 	if {[lsearch $args ShowEleTag]!=-1} {
