@@ -145,6 +145,18 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 		puts $outfile1 "%EleNode% $ele: $a"
 		
 		}	
+
+	# get Retained and constrained nodes ------------------------------------------------------
+	set retained [retainedNodes]
+	
+	foreach retain $retained {
+
+	set a [constrainedNodes $retain]
+	puts $outfile1 "%RetConsNode% $retain: $a"
+	
+	}	
+	
+
 		
 	# get element type------------------------------------------------------
 	# foreach ele $elements {
