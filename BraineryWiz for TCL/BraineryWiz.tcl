@@ -115,26 +115,39 @@ proc PlotModel {args} {
 		
 	}
 	
-	ExportModel $FileName
+	set AlsoDisp "No"
+	ExportModel $FileName $AlsoDisp
 	exec cmd.exe /c $command &
 	# exec cmd.exe /c "BraineryWiz.exe FileName $FileName" &
 }
 
 
-proc ExportModel {{FileName "Brainery.Wiz"}} {
+proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"}} {
 	
 	# Function that Export Model Data
 	
 	# First Open The File ---------------------------------------------------
 	set outfile1 [open $FileName w]
 	
-    # get Nodes tag and corresponding nodes coordinates----------------------
+    # get Nodes tag and corresponding nodes coordinates and displacement if needed----------------------
 	set nodes [getNodeTags]
 
 	foreach nd $nodes {
+	
 			set a [nodeCoord $nd]
 			puts $outfile1 "%NodeCoord% $nd: $a"
+			
 		}
+		
+	if {[expr [string match "Yes" $AlsoDisp ]==1]} {
+	
+		foreach nd $nodes {
+		
+			set a [nodeDisp $nd]
+			puts $outfile1 "%NodeDisp% $nd: $a"	
+			
+			}	
+	}
 		
 	# get Element tags and corresponding element nodes----------------------
 	set elements [getEleTags]
@@ -147,17 +160,16 @@ proc ExportModel {{FileName "Brainery.Wiz"}} {
 		}	
 
 	# get Retained and constrained nodes ------------------------------------------------------
-	set retained [retainedNodes]
+	# The following commands are not available in latest release of Opensees 3.2.2 so I comment it until next release
+	# set retained [retainedNodes]
 	
-	foreach retain $retained {
+	# foreach retain $retained {
 
-	set a [constrainedNodes $retain]
-	puts $outfile1 "%RetConsNode% $retain: $a"
+		# set a [constrainedNodes $retain]
+		# puts $outfile1 "%RetConsNode% $retain: $a"
 	
-	}	
+	# }	
 	
-
-		
 	# get element type------------------------------------------------------
 	# foreach ele $elements {
 
