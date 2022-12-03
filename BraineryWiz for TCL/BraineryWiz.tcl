@@ -22,13 +22,6 @@
 
 
 proc PlotModel {args} {
-	#Function to plot the model with options:
-	#Title (and the title should be enter after it)
-	#DrawNodesOff: Not to show Nodes
-	#ShowNodeTag: To show Nodes tag
-	#ShowEleTag: To show Elements tag
-	#OnHover: To show Data in Hover Format
-	#Sample : PlotModel DrawNodesOff ShowEleTag OnHover
 
 	set command "BraineryWiz.exe PlotModel"
 	
@@ -41,62 +34,110 @@ proc PlotModel {args} {
 	set FileName "$FileName.wiz"
 	set command "$command FileName {$FileName}"
 	
-	#set the Title
-	if {[lsearch $args Title]!=-1} {
+	#Set Options
+	set command "${command}[SetOptions $args]"
 	
-		set a [lsearch $args Title]
-		set Title [lindex $args [expr $a+1]]
+	#Set Command
+	set AlsoDisp "No"
+	ExportModel $FileName $AlsoDisp
+	exec cmd.exe /c $command &
+
+}
+
+
+proc PlotDefo {args} {
+
+	set command "BraineryWiz.exe PlotModel"
+	
+	
+	# Set the file name
+	set FileName [info script]
+	# set FileName [file tail $pathdir]
+	set length [string length $FileName]
+	set FileName [string range $FileName 0 [expr $length-5]]
+	set FileName "$FileName.wiz"
+	set command "$command FileName {$FileName}"
+	
+	#Set Options
+	set command "${command}[SetOptions $args]"
+	
+	#Set Command
+	set AlsoDisp "Yes"
+	ExportModel $FileName $AlsoDisp
+	exec cmd.exe /c $command &
+
+}
+
+
+
+proc SetOptions {argsl} {
+	
+	#Function to plot the model with options:
+	#Title (and the title should be enter after it)
+	#DrawNodesOff: Not to show Nodes
+	#ShowNodeTag: To show Nodes tag
+	#ShowEleTag: To show Elements tag
+	#OnHover: To show Data in Hover Format
+	#Sample : PlotModel DrawNodesOff ShowEleTag OnHover
+	
+	set command ""
+	
+	#set the Title
+	if {[lsearch $argsl Title]!=-1} {
+	
+		set a [lsearch $argsl Title]
+		set Title [lindex $argsl [expr $a+1]]
 		set command "$command Title $Title"
 		
 	} 
 		
 	
 	#Set to Not Draw Nodes
-	if {[lsearch $args DrawNodesOff]!=-1} {
+	if {[lsearch $argsl DrawNodesOff]!=-1} {
 
 		set command "$command DrawNodesOff"
 		
 	}
 	
 	#Set Show nodes Tag
-	if {[lsearch $args ShowNodeTag]!=-1} {
+	if {[lsearch $argsl ShowNodeTag]!=-1} {
 
 		set command "$command ShowNodeTag"
 		
 	}
 
 	#Set Show Constrained
-	if {[lsearch $args ShowConstrained]!=-1} {
+	if {[lsearch $argsl ShowConstrained]!=-1} {
 
 		set command "$command ShowConstrained"
 		
 	}
 	
 	#Set ConstrainedSize
-	if {[lsearch $args ConstrainedSize]!=-1} {
+	if {[lsearch $argsl ConstrainedSize]!=-1} {
 
-		set a [lsearch $args ConstrainedSize]
-		set SIZE [lindex $args [expr $a+1]]
+		set a [lsearch $argsl ConstrainedSize]
+		set SIZE [lindex $argsl [expr $a+1]]
 		set command "$command ConstrainedSize $SIZE"
 		
 	}	
 	
 	#Set to Show Elements Tag
-	if {[lsearch $args ShowEleTag]!=-1} {
+	if {[lsearch $argsl ShowEleTag]!=-1} {
 
 		set command "$command ShowEleTag"
 		
 	}
 	
 	#Set to Add hovers
-	if {[lsearch $args OnHover]!=-1} {
+	if {[lsearch $argsl OnHover]!=-1} {
 
 		set command "$command OnHover"
 		
 	}	
 	
 	#To plot Legends on the plot
-	if {[lsearch $args PlotLegend]!=-1} {
+	if {[lsearch $argsl PlotLegend]!=-1} {
 
 		set command "$command PlotLegend"
 		
@@ -104,24 +145,22 @@ proc PlotModel {args} {
 
 	
 	#To set Vertical Axis on the plot
-	if {[lsearch $args VerticalAxis_2]!=-1} {
+	if {[lsearch $argsl VerticalAxis_2]!=-1} {
 
 		set command "$command VerticalAxis_2"
 		
 	}
-	if {[lsearch $args VerticalAxis_1]!=-1} {
+	if {[lsearch $argsl VerticalAxis_1]!=-1} {
 
 		set command "$command VerticalAxis_1"
 		
 	}
+
 	
-	set AlsoDisp "No"
-	ExportModel $FileName $AlsoDisp
-	exec cmd.exe /c $command &
-	# exec cmd.exe /c "BraineryWiz.exe FileName $FileName" &
+	
+	return $command
+
 }
-
-
 proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"}} {
 	
 	# Function that Export Model Data
