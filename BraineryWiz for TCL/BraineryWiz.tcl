@@ -47,7 +47,7 @@ proc PlotModel {args} {
 
 proc PlotDefo {args} {
 
-	set command "BraineryWiz.exe PlotModel"
+	set command "BraineryWiz.exe PlotDefo"
 	
 	
 	# Set the file name
@@ -81,6 +81,22 @@ proc SetOptions {argsl} {
 	#Sample : PlotModel DrawNodesOff ShowEleTag OnHover
 	
 	set command ""
+	#Set NotDrawWireShadow
+	if {[lsearch $argsl NotDrawWireShadow]!=-1} {
+
+		set command "$command NotDrawWireShadow"
+		
+	}	
+	
+	#Set ScaleFactor
+	if {[lsearch $argsl ScaleFactor]!=-1} {
+	
+		set a [lsearch $argsl ScaleFactor]
+		set ScaleFactor [lindex $argsl [expr $a+1]]
+		set command "$command ScaleFactor $ScaleFactor"
+		
+	} 	
+
 	
 	#set the Title
 	if {[lsearch $argsl Title]!=-1} {
