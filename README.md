@@ -6,6 +6,7 @@
 [![Downloads](https://pepy.tech/badge/BraineryWiz/week)](https://pepy.tech/project/BraineryWiz)
 
 **LinkedIn Page**: https://www.linkedin.com/company/brainerywiz
+
 **Main WebPage**: https://www.silviasbrainery.com/brainerywiz
 
 **BraineyWiz Email Address:** <BraineryWiz@Gmail.com>
