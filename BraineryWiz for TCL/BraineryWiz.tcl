@@ -44,6 +44,28 @@ proc PlotModel {args} {
 
 }
 
+proc PlotAnime {args} {
+
+	set command "BraineryWiz.exe PlotAnime"
+	
+	
+	# Set the file name
+	set FileName [info script]
+	# set FileName [file tail $pathdir]
+	set length [string length $FileName]
+	set FileName [string range $FileName 0 [expr $length-5]]
+	set FileName "$FileName.wiz"
+	set command "$command FileName {$FileName}"
+	
+	#Set Options
+	set command "${command}[SetOptions $args]"
+	
+	#Set Command
+	set AlsoDisp "No"
+	ExportModel $FileName $AlsoDisp
+	# exec cmd.exe /c $command &
+
+}
 
 proc PlotDefo {args} {
 
@@ -310,10 +332,13 @@ proc Record {{FileName "BrainRecorder.txt"}} {
 			
 			
 	}
+	
+	set data [string trim $data ", "];  #To remove last comma
+	
 	# Open The File ---------------------------------------------------
 	set outfile1 [open $FileName a]	
-	# Write the file
-	puts $outfile1 "{${data}}%%"
+	# Write the file with -nonewline option 
+	puts -nonewline $outfile1 "{${data}}%%"
 	# Close the opened file 
 	close $outfile1
 }
