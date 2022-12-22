@@ -39,7 +39,34 @@ proc PlotModel {args} {
 	
 	#Set Command
 	set AlsoDisp "No"
-	ExportModel $FileName $AlsoDisp
+	set EigenData "No"
+	set ModeNumber 1
+	ExportModel $FileName $AlsoDisp $EigenData $ModeNumber
+	exec cmd.exe /c $command &
+
+}
+
+proc PlotDefo {args} {
+
+	set command "BraineryWiz.exe PlotDefo"
+	
+	
+	# Set the file name
+	set FileName [info script]
+	# set FileName [file tail $pathdir]
+	set length [string length $FileName]
+	set FileName [string range $FileName 0 [expr $length-5]]
+	set FileName "$FileName.wiz"
+	set command "$command FileName {$FileName}"
+	
+	#Set Options
+	set command "${command}[SetOptions $args]"
+	
+	#Set Command
+	set AlsoDisp "Yes"
+	set EigenData "No"
+	set ModeNumber 1
+	ExportModel $FileName $AlsoDisp $EigenData $ModeNumber
 	exec cmd.exe /c $command &
 
 }
@@ -62,14 +89,16 @@ proc PlotAnime {args} {
 	
 	#Set Command
 	set AlsoDisp "No"
-	ExportModel $FileName $AlsoDisp
-	# exec cmd.exe /c $command &
+	set EigenData "No"
+	set ModeNumber 1
+	ExportModel $FileName $AlsoDisp $EigenData $ModeNumber
+	exec cmd.exe /c $command &
 
 }
 
-proc PlotDefo {args} {
+proc PlotModeShape {args} {
 
-	set command "BraineryWiz.exe PlotDefo"
+	set command "BraineryWiz.exe PlotModeShape"
 	
 	
 	# Set the file name
@@ -84,13 +113,13 @@ proc PlotDefo {args} {
 	set command "${command}[SetOptions $args]"
 	
 	#Set Command
-	set AlsoDisp "Yes"
-	ExportModel $FileName $AlsoDisp
+	set AlsoDisp "No"
+	set EigenData "Yes"
+	set ModeNumber [lindex $args 0]
+	ExportModel $FileName $AlsoDisp $EigenData $ModeNumber
 	exec cmd.exe /c $command &
 
 }
-
-
 
 proc SetOptions {argsl} {
 	
@@ -199,7 +228,9 @@ proc SetOptions {argsl} {
 	return $command
 
 }
-proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"}} {
+
+
+proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"} {EigenData "No"} {ModeNumber 1} {
 	
 	# Function that Export Model Data
 	
@@ -225,7 +256,20 @@ proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"}} {
 			
 			}	
 	}
+
+	if {[expr [string match "Yes" $EigenData ]==1]} {
 		
+		set a [eigen $ModeNumber]
+		puts $outfile1 "%EigenValues% $ModeNumber: $a"
+		
+		foreach nd $nodes {
+		
+			set a [nodeEigenvector $nd $ModeNumber]
+			puts $outfile1 "%NodeEigenVector% $nd: $a"	
+			
+			}	
+	}
+	
 	# get Element tags and corresponding element nodes----------------------
 	set elements [getEleTags]
 	
