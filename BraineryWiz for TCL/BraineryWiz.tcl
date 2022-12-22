@@ -230,7 +230,7 @@ proc SetOptions {argsl} {
 }
 
 
-proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"} {EigenData "No"} {ModeNumber 1} {
+proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"} {EigenData "No"} {ModeNumber 1}} {
 	
 	# Function that Export Model Data
 	
