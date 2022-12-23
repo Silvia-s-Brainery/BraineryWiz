@@ -21,6 +21,9 @@
 - Both **BraineryWiz.exe and BraineryWiz.tcl** also can be downloaded from [here](https://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/BraineryWiz.zip) as a zip file. (Right Click on the link and click "Save Link As" to save it on your system)
 
 
+- Documentations also can be downloaded from [here](https://www.bijansayyafzadeh.com/OpenSees/BraineryWizTCL/Documentations.zip) as a zip file. (Right Click on the link and click "Save Link As" to save it on your system)
+
+
 ## How to use:
 - First user should source the downloaded file: 
 
