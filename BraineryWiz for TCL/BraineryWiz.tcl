@@ -361,7 +361,7 @@ proc Record {{FileName "BrainRecorder.txt"}} {
     # get Nodes tag and corresponding nodes Displacement----------------------
 	set nodes [getNodeTags]
 	set data ""
-	puts "****** START ******"
+
 	foreach nd $nodes {
 			set disp [nodeDisp $nd]
 			
