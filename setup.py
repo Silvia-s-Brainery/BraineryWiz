@@ -58,7 +58,7 @@ setup(
         #"hello": ["*.msg"],
     },
     packages=find_packages(),
-    install_requires=['openseespy', 'eseesminipy','numpy','plotly','scipy','pillow','kaleido','tqdm'],
+    install_requires=['openseespy', 'eseesminipy','numpy','plotly','scipy','pillow','kaleido','tqdm','ipywidgets'],
     url="https://github.com/Silvia-s-Brainery/BraineryWiz",
     keywords=['python', 'opensees', 'Modeling', 'Dynamic'],
     classifiers=[
