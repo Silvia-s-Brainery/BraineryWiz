@@ -46,7 +46,7 @@ elif sys.platform.startswith('win'):
         from .FEMWiz import BaseData, DispData, EigenData
 
     except:
-        raise RuntimeError('Use Python Version 3.11.5. For more information visit: https://silvia-s-brainery.github.io/BraineryWizDocumentation/Python_Version/installation.html')
+        raise RuntimeError('Use Python Version 3.11.5. If you are not using Anaconda environment instead of installing mentioned version of python you can install older version of BraineryWiz (pip install BraineryWiz==0.91) But it does not work on Anaconda environment!  For more information visit: https://silvia-s-brainery.github.io/BraineryWizDocumentation/Python_Version/installation.html')
 
 elif sys.platform.startswith('darwin'):
 
