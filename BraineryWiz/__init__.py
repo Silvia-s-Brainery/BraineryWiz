@@ -46,7 +46,7 @@ elif sys.platform.startswith('win'):
         from .FEMWiz import BaseData, DispData, EigenData
 
     except:
-        raise RuntimeError('Failed to import openseespy on Windows. Attention: Anaconda environment is not supported yet. For more information visit: https://silvia-s-brainery.github.io/BraineryWizDocumentation/Python_Version/installation.html')
+        raise RuntimeError('Use Python Version 3.11.5. For more information visit: https://silvia-s-brainery.github.io/BraineryWizDocumentation/Python_Version/installation.html')
 
 elif sys.platform.startswith('darwin'):
 
