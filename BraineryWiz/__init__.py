@@ -20,6 +20,9 @@
 # ** ****************************************************************** */
 
 import sys
+import os
+import shutil
+
 
 # only work for 64 bit system
 if sys.maxsize < 2**31:
@@ -36,17 +39,94 @@ if sys.platform.startswith('linux'):
         raise RuntimeError('Failed to import openseespy on Linux.')
 
 elif sys.platform.startswith('win'):
-
+    
+    #Get the current directory path
+    curfol=os.path.dirname(__file__)
+    
     try:
+        
+        #initially import brainerywiz with current files. if it worked so worked else we dive into exceptions
         from .PlotModel import PlotModel
         from .PlotAnimation import RecorderReset, Record, PlotAnime, PlotAnimeGif
         from .PlotDefo import PlotDefo
         from .PlotModeShape import PlotModeShape
         from .RealTime import RealTimeObj, RealTimeUpdate
         from .FEMWiz import BaseData, DispData, EigenData
-
+    
     except:
-        raise RuntimeError('Use Python Version 3.11.5. If you are not using Anaconda environment instead of installing mentioned version of python you can install older version of BraineryWiz (pip install BraineryWiz==0.91) But it does not work on Anaconda environment!  For more information visit: https://silvia-s-brainery.github.io/BraineryWizDocumentation/Python_Version/installation.html')
+        
+        try:
+            # print('python 11')
+
+            #Remove files if exist
+            if os.path.isfile('_DFunctions.pyd'): os.remove('_DFunctions.pyd')
+            if os.path.isfile('_PlotData.pyd'): os.remove('_PlotData.pyd')
+            if os.path.isfile('PlotModel.pyd'): os.remove('PlotModel.pyd')    
+            if os.path.isfile('PlotAnimation.pyd'): os.remove('PlotAnimation.pyd')
+            if os.path.isfile('PlotDefo.pyd'): os.remove('PlotDefo.pyd')
+            if os.path.isfile('PlotModeShape.pyd'): os.remove('PlotModeShape.pyd')
+            if os.path.isfile('RealTime.pyd'): os.remove('RealTime.pyd')
+            if os.path.isfile('FEMWiz.pyd'): os.remove('FEMWiz.pyd')
+            # print('remove has done')              
+                
+            #Rename files from the above version  
+            shutil.copy(curfol+"\\"+"_DFunctions11.pyd",curfol+"\\"+'_DFunctions.pyd');
+            shutil.copy(curfol+"\\"+"_PlotData11.pyd",curfol+"\\"+'_PlotData.pyd');
+            shutil.copy(curfol+"\\"+"PlotModel11.pyd",curfol+"\\"+'PlotModel.pyd');
+            shutil.copy(curfol+"\\"+"PlotAnimation11.pyd",curfol+"\\"+'PlotAnimation.pyd');
+            shutil.copy(curfol+"\\"+"PlotDefo11.pyd",curfol+"\\"+'PlotDefo.pyd');
+            shutil.copy(curfol+"\\"+"PlotModeShape11.pyd",curfol+"\\"+'PlotModeShape.pyd');
+            shutil.copy(curfol+"\\"+"RealTime11.pyd",curfol+"\\"+'RealTime.pyd');
+            shutil.copy(curfol+"\\"+"FEMWiz11.pyd",curfol+"\\"+'FEMWiz.pyd');
+            # print('rename has done')
+
+
+            from .PlotModel import PlotModel
+            from .PlotAnimation import RecorderReset, Record, PlotAnime, PlotAnimeGif
+            from .PlotDefo import PlotDefo
+            from .PlotModeShape import PlotModeShape
+            from .RealTime import RealTimeObj, RealTimeUpdate
+            from .FEMWiz import BaseData, DispData, EigenData
+            
+
+        except:
+
+            try:
+                # print('python 10')
+
+                #Remove files if exist
+                if os.path.isfile('_DFunctions.pyd'): os.remove('_DFunctions.pyd')
+                if os.path.isfile('_PlotData.pyd'): os.remove('_PlotData.pyd')
+                if os.path.isfile('PlotModel.pyd'): os.remove('PlotModel.pyd')    
+                if os.path.isfile('PlotAnimation.pyd'): os.remove('PlotAnimation.pyd')
+                if os.path.isfile('PlotDefo.pyd'): os.remove('PlotDefo.pyd')
+                if os.path.isfile('PlotModeShape.pyd'): os.remove('PlotModeShape.pyd')
+                if os.path.isfile('RealTime.pyd'): os.remove('RealTime.pyd')
+                if os.path.isfile('FEMWiz.pyd'): os.remove('FEMWiz.pyd')
+                # print('remove has done')              
+
+                #Rename files from the above version  
+                shutil.copy(curfol+"\\"+"_DFunctions10.pyd",curfol+"\\"+'_DFunctions.pyd');
+                shutil.copy(curfol+"\\"+"_PlotData10.pyd",curfol+"\\"+'_PlotData.pyd');
+                shutil.copy(curfol+"\\"+"PlotModel10.pyd",curfol+"\\"+'PlotModel.pyd');
+                shutil.copy(curfol+"\\"+"PlotAnimation10.pyd",curfol+"\\"+'PlotAnimation.pyd');
+                shutil.copy(curfol+"\\"+"PlotDefo10.pyd",curfol+"\\"+'PlotDefo.pyd');
+                shutil.copy(curfol+"\\"+"PlotModeShape10.pyd",curfol+"\\"+'PlotModeShape.pyd');
+                shutil.copy(curfol+"\\"+"RealTime10.pyd",curfol+"\\"+'RealTime.pyd');
+                shutil.copy(curfol+"\\"+"FEMWiz10.pyd",curfol+"\\"+'FEMWiz.pyd');
+                # print('rename has done')
+                
+                from .PlotModel import PlotModel
+                from .PlotAnimation import RecorderReset, Record, PlotAnime, PlotAnimeGif
+                from .PlotDefo import PlotDefo
+                from .PlotModeShape import PlotModeShape
+                from .RealTime import RealTimeObj, RealTimeUpdate
+                from .FEMWiz import BaseData, DispData, EigenData       
+
+
+            except:
+
+                raise RuntimeError('Use Python Version 3.11.5 or 3.10.4. If you are not using Anaconda environment instead of installing mentioned versions of python. For more information visit: https://silvia-s-brainery.github.io/BraineryWizDocumentation/Python_Version/installation.html')
 
 elif sys.platform.startswith('darwin'):
 
