@@ -173,15 +173,14 @@ proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"} {EigenData "No"} {Mo
 		}	
 
 	# get Retained and constrained nodes ------------------------------------------------------
-	# The following commands are not available in latest release of Opensees 3.2.2 so I comment it until next release
-	# set retained [retainedNodes]
+	set retained [getRetainedNodes]
 	
-	# foreach retain $retained {
+	foreach retain $retained {
 
-		# set a [constrainedNodes $retain]
-		# puts $outfile1 "%RetConsNode% $retain: $a"
+		set a [getConstrainedNodes $retain]
+		puts $outfile1 "%RetConsNode% $retain: $a"
 	
-	# }	
+	}	
 	
 	# get element type------------------------------------------------------
 	# foreach ele $elements {
