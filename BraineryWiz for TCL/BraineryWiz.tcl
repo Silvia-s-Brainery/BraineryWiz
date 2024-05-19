@@ -35,7 +35,7 @@ proc PlotModel {args} {
 	set command "$command FileName {$FileName}"
 	
 	#Set Options
-	set command "${command}[SetOptions $args]"
+	set command "${command} ${args}"
 	
 	#Set Command
 	set AlsoDisp "No"
@@ -60,7 +60,7 @@ proc PlotDefo {args} {
 	set command "$command FileName {$FileName}"
 	
 	#Set Options
-	set command "${command}[SetOptions $args]"
+	set command "${command} ${args}"
 	
 	#Set Command
 	set AlsoDisp "Yes"
@@ -85,7 +85,7 @@ proc PlotAnime {args} {
 	set command "$command FileName {$FileName}"
 	
 	#Set Options
-	set command "${command}[SetOptions $args]"
+	set command "${command} ${args}"
 	
 	#Set Command
 	set AlsoDisp "No"
@@ -110,7 +110,7 @@ proc PlotModeShape {args} {
 	set command "$command FileName {$FileName}"
 	
 	#Set Options
-	set command "${command}[SetOptions $args]"
+	set command "${command} ${args}"
 	
 	#Set Command
 	set AlsoDisp "No"
@@ -118,114 +118,6 @@ proc PlotModeShape {args} {
 	set ModeNumber [lindex $args 0]
 	ExportModel $FileName $AlsoDisp $EigenData $ModeNumber
 	exec cmd.exe /c $command &
-
-}
-
-proc SetOptions {argsl} {
-	
-	#Function to plot the model with options:
-	#Title (and the title should be enter after it)
-	#DrawNodesOff: Not to show Nodes
-	#ShowNodeTag: To show Nodes tag
-	#ShowEleTag: To show Elements tag
-	#OnHover: To show Data in Hover Format
-	#Sample : PlotModel DrawNodesOff ShowEleTag OnHover
-	
-	set command ""
-	#Set NotDrawWireShadow
-	if {[lsearch $argsl NotDrawWireShadow]!=-1} {
-
-		set command "$command NotDrawWireShadow"
-		
-	}	
-	
-	#Set ScaleFactor
-	if {[lsearch $argsl ScaleFactor]!=-1} {
-	
-		set a [lsearch $argsl ScaleFactor]
-		set ScaleFactor [lindex $argsl [expr $a+1]]
-		set command "$command ScaleFactor $ScaleFactor"
-		
-	} 	
-
-	
-	#set the Title
-	if {[lsearch $argsl Title]!=-1} {
-	
-		set a [lsearch $argsl Title]
-		set Title [lindex $argsl [expr $a+1]]
-		set command "$command Title $Title"
-		
-	} 
-		
-	
-	#Set to Not Draw Nodes
-	if {[lsearch $argsl DrawNodesOff]!=-1} {
-
-		set command "$command DrawNodesOff"
-		
-	}
-	
-	#Set Show nodes Tag
-	if {[lsearch $argsl ShowNodeTag]!=-1} {
-
-		set command "$command ShowNodeTag"
-		
-	}
-
-	#Set Show Constrained
-	if {[lsearch $argsl ShowConstrained]!=-1} {
-
-		set command "$command ShowConstrained"
-		
-	}
-	
-	#Set ConstrainedSize
-	if {[lsearch $argsl ConstrainedSize]!=-1} {
-
-		set a [lsearch $argsl ConstrainedSize]
-		set SIZE [lindex $argsl [expr $a+1]]
-		set command "$command ConstrainedSize $SIZE"
-		
-	}	
-	
-	#Set to Show Elements Tag
-	if {[lsearch $argsl ShowEleTag]!=-1} {
-
-		set command "$command ShowEleTag"
-		
-	}
-	
-	#Set to Add hovers
-	if {[lsearch $argsl OnHover]!=-1} {
-
-		set command "$command OnHover"
-		
-	}	
-	
-	#To plot Legends on the plot
-	if {[lsearch $argsl PlotLegend]!=-1} {
-
-		set command "$command PlotLegend"
-		
-	}
-
-	
-	#To set Vertical Axis on the plot
-	if {[lsearch $argsl VerticalAxis_2]!=-1} {
-
-		set command "$command VerticalAxis_2"
-		
-	}
-	if {[lsearch $argsl VerticalAxis_1]!=-1} {
-
-		set command "$command VerticalAxis_1"
-		
-	}
-
-	
-	
-	return $command
 
 }
 
@@ -386,6 +278,7 @@ proc Record {{FileName "BrainRecorder.txt"}} {
 	# Close the opened file 
 	close $outfile1
 }
+
 proc RecorderReset {{FileName "BrainRecorder.txt"}} {
 	#Function that Clear the recorded file
 	
