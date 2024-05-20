@@ -218,6 +218,29 @@ proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"} {EigenData "No"} {Mo
 			# puts $outfile1 "%nodeDOFs% $nd: $a"
 		# }
 		
+	# get fiberData2 for elements--------------------------------------------
+	foreach ele $elements {
+
+		set a [eleResponse $ele section fiberData2]
+		if {$a!=""} {
+			puts $outfile1 "%eleFiberData2% $ele: $a"
+			}
+		
+		}	
+	
+	# get axis for elements--------------------------------------------
+	foreach ele $elements {
+		set a ""
+		set b [eleResponse $ele xaxis]
+		set a "$a $b"
+		set b [eleResponse $ele yaxis]
+		set a "$a, $b"
+		set b [eleResponse $ele zaxis]
+		set a "$a, $b"
+		puts $outfile1 "%eleAxis% $ele: $a"
+		
+		}	
+		
 	# get Model info---------------------------------------------------------
 	puts $outfile1 "%nodeBounds% [nodeBounds]"		
 	
