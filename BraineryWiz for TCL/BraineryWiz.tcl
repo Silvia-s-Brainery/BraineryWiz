@@ -218,6 +218,13 @@ proc ExportModel {{FileName "Brainery.Wiz"} {AlsoDisp "No"} {EigenData "No"} {Mo
 			# puts $outfile1 "%nodeDOFs% $nd: $a"
 		# }
 		
+	# get Fixed nodes and DOFs-----------------------------------------------
+	set FixedNodes [getFixedNodes]
+	foreach nd $FixedNodes {
+			set a [getFixedDOFs $nd]
+			puts $outfile1 "%nodeFixedDOFs% $nd: $a"
+		}
+	
 	# get fiberData2 for elements--------------------------------------------
 	foreach ele $elements {
 
