@@ -70,14 +70,14 @@ elif sys.platform.startswith('win'):
             # print('remove has done')              
                 
             #Rename files from the above version  
-            shutil.copy(curfol+"\\"+"_DFunctions11.pyd",curfol+"\\"+'_DFunctions.pyd');
-            shutil.copy(curfol+"\\"+"_PlotData11.pyd",curfol+"\\"+'_PlotData.pyd');
-            shutil.copy(curfol+"\\"+"PlotModel11.pyd",curfol+"\\"+'PlotModel.pyd');
-            shutil.copy(curfol+"\\"+"PlotAnimation11.pyd",curfol+"\\"+'PlotAnimation.pyd');
-            shutil.copy(curfol+"\\"+"PlotDefo11.pyd",curfol+"\\"+'PlotDefo.pyd');
-            shutil.copy(curfol+"\\"+"PlotModeShape11.pyd",curfol+"\\"+'PlotModeShape.pyd');
-            shutil.copy(curfol+"\\"+"RealTime11.pyd",curfol+"\\"+'RealTime.pyd');
-            shutil.copy(curfol+"\\"+"FEMWiz11.pyd",curfol+"\\"+'FEMWiz.pyd');
+            shutil.copy(curfol+"\\"+"_DFunctions.cp311-win_amd64.pyd",curfol+"\\"+'_DFunctions.pyd');
+            shutil.copy(curfol+"\\"+"_PlotData.cp311-win_amd64.pyd",curfol+"\\"+'_PlotData.pyd');
+            shutil.copy(curfol+"\\"+"PlotModel.cp311-win_amd64.pyd",curfol+"\\"+'PlotModel.pyd');
+            shutil.copy(curfol+"\\"+"PlotAnimation.cp311-win_amd64.pyd",curfol+"\\"+'PlotAnimation.pyd');
+            shutil.copy(curfol+"\\"+"PlotDefo.cp311-win_amd64.pyd",curfol+"\\"+'PlotDefo.pyd');
+            shutil.copy(curfol+"\\"+"PlotModeShape.cp311-win_amd64.pyd",curfol+"\\"+'PlotModeShape.pyd');
+            shutil.copy(curfol+"\\"+"RealTime.cp311-win_amd64.pyd",curfol+"\\"+'RealTime.pyd');
+            shutil.copy(curfol+"\\"+"FEMWiz.cp311-win_amd64.pyd",curfol+"\\"+'FEMWiz.pyd');
             # print('rename has done')
 
 
@@ -106,14 +106,14 @@ elif sys.platform.startswith('win'):
                 # print('remove has done')              
 
                 #Rename files from the above version  
-                shutil.copy(curfol+"\\"+"_DFunctions10.pyd",curfol+"\\"+'_DFunctions.pyd');
-                shutil.copy(curfol+"\\"+"_PlotData10.pyd",curfol+"\\"+'_PlotData.pyd');
-                shutil.copy(curfol+"\\"+"PlotModel10.pyd",curfol+"\\"+'PlotModel.pyd');
-                shutil.copy(curfol+"\\"+"PlotAnimation10.pyd",curfol+"\\"+'PlotAnimation.pyd');
-                shutil.copy(curfol+"\\"+"PlotDefo10.pyd",curfol+"\\"+'PlotDefo.pyd');
-                shutil.copy(curfol+"\\"+"PlotModeShape10.pyd",curfol+"\\"+'PlotModeShape.pyd');
-                shutil.copy(curfol+"\\"+"RealTime10.pyd",curfol+"\\"+'RealTime.pyd');
-                shutil.copy(curfol+"\\"+"FEMWiz10.pyd",curfol+"\\"+'FEMWiz.pyd');
+                shutil.copy(curfol+"\\"+"_DFunctions.cp310-win_amd64.pyd",curfol+"\\"+'_DFunctions.pyd');
+                shutil.copy(curfol+"\\"+"_PlotData.cp310-win_amd64.pyd",curfol+"\\"+'_PlotData.pyd');
+                shutil.copy(curfol+"\\"+"PlotModel.cp310-win_amd64.pyd",curfol+"\\"+'PlotModel.pyd');
+                shutil.copy(curfol+"\\"+"PlotAnimation.cp310-win_amd64.pyd",curfol+"\\"+'PlotAnimation.pyd');
+                shutil.copy(curfol+"\\"+"PlotDefo.cp310-win_amd64.pyd",curfol+"\\"+'PlotDefo.pyd');
+                shutil.copy(curfol+"\\"+"PlotModeShape.cp310-win_amd64.pyd",curfol+"\\"+'PlotModeShape.pyd');
+                shutil.copy(curfol+"\\"+"RealTime.cp310-win_amd64.pyd",curfol+"\\"+'RealTime.pyd');
+                shutil.copy(curfol+"\\"+"FEMWiz.cp310-win_amd64.pyd",curfol+"\\"+'FEMWiz.pyd');
                 # print('rename has done')
                 
                 from .PlotModel import PlotModel
